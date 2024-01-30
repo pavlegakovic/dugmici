@@ -12,12 +12,9 @@ public class Main {
         serialPort.setComPortParameters(9600,Byte.SIZE,SerialPort.ONE_STOP_BIT,SerialPort.NO_PARITY);
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_WRITE_BLOCKING,0,0);
 
-        try {
-            serialPort.openPort();
-        }
-        catch (Exception e)
+        if(!serialPort.openPort())
         {
-            System.out.println(e.getMessage());
+            throw new IllegalStateException();
         }
 
         serialPort.addDataListener(new SerialPortDataListener() {
