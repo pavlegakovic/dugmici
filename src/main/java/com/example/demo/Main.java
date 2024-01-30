@@ -7,10 +7,6 @@ import com.fazecast.jSerialComm.SerialPortEvent;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("test app");
-
-        long timeStart = System.currentTimeMillis();
-        var sp= SerialPort.getCommPort("demo");
 
         SerialPort serialPort = SerialPort.getCommPort("COM11");
         serialPort.setComPortParameters(9600,Byte.SIZE,SerialPort.ONE_STOP_BIT,SerialPort.NO_PARITY);
