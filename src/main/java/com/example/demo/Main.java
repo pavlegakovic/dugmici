@@ -1,11 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.TimerScheduleModule.TimerScheduleHandler;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
-
-import java.util.Timer;
 
 public class Main {
 
@@ -39,6 +36,7 @@ public class Main {
                 {
                     String data = new String(serialPortEvent.getReceivedData());
                     System.out.println(data);
+
                 }
             }
         });
